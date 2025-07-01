@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "774689894478",
+    "project_id": "staff-profile-007",
+    "storage_bucket": "staff-profile-007.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774689894478:android:bf617574ab221f91cfd31f",
+        "android_client_info": {
+          "package_name": "com.example.staffprofile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWy0OhRnXh7hjbj_9q2Jw9Sg-BrSqTaMM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.staffprofile">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Permissions for reading and writing external storage (if needed for profile images) -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.StaffProfile"
+        tools:targetApi="31"
+        tools:ignore="ExtraText"
+        >
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.staffprofile.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- LoginActivity as launcher (assumes user logs in first) -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- MainActivity (the activity shown after login) -->
+        <activity android:name=".MainActivity" android:exported="true" />
+
+        <!-- Other Activities -->
+        <activity android:name=".AddProfileActivity" />
+        <activity android:name=".ViewProfileActivity" />
+        <activity android:name=".EditProfileActivity" />
+        <activity android:name=".RegisterActivity" />
+
+    </application>
+
+</manifest>
